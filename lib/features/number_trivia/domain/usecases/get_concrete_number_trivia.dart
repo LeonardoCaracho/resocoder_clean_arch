@@ -9,7 +9,7 @@ import 'package:resocoder_clean_arch/features/number_trivia/domain/repositories/
 class GetConcreteNumberTrivia implements Usecase<NumberTrivia, Params> {
   final NumberTriviaRepository repository;
 
-  GetConcreteNumberTrivia(this.repository);
+  GetConcreteNumberTrivia({@required this.repository});
 
   @override
   Future<Either<Failure, NumberTrivia>> call(Params params) async {
