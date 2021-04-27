@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:resocoder_clean_arch/features/number_trivia/presentation/pages/number_trivia_page.dart';
-import 'injection_container.dart' as di;
+import 'injection_container.dart' as getIt;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  di.init();
-  runApp(MyApp());
+  getIt.init().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,6 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.green.shade800,
         accentColor: Colors.green.shade600,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.green.shade800,
+          ),
+        ),
       ),
       home: NumberTriviaPage(),
     );

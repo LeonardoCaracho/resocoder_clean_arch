@@ -44,7 +44,7 @@ void main() {
 
       verify(
         httpClient.get(
-          'http://numbersapi.com/$tNumber',
+          Uri.parse('http://numbersapi.com/$tNumber'),
           headers: {'Content-Type': 'application/json'},
         ),
       );
@@ -80,7 +80,7 @@ void main() {
 
       verify(
         httpClient.get(
-          'http://numbersapi.com/random',
+          Uri.parse('http://numbersapi.com/random'),
           headers: {'Content-Type': 'application/json'},
         ),
       );
